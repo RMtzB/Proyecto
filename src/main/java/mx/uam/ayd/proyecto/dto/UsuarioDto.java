@@ -22,6 +22,7 @@ public class UsuarioDto {
 	 * @param usuario la entidad
 	 * @return dto obtenido a partir de la entidad
 	 */
+	
 	public static UsuarioDto creaDto(Usuario usuario) {
 		UsuarioDto dto = new UsuarioDto();
 
