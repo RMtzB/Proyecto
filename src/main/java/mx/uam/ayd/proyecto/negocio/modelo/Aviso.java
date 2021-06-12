@@ -1,5 +1,7 @@
 package mx.uam.ayd.proyecto.negocio.modelo;
 
+import java.util.LinkedList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,22 +9,16 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-/**
- * Entidad de negocio Usuario
- * 
- * @author humbertocervantes
- *
- */
 @Entity
 @Data
-public class Usuario {
+public class Aviso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idUsuario;
+	private Long idPublicacion;
+	private String titulo,
+					descripcion,
+					ubicacion;
+	private LinkedList<String> comentarios;
+	private LinkedList<String> urlFotos;
 
-	private String nombre;
-
-	private String apellido;
-
-	private String nombreUsuario;
 }
