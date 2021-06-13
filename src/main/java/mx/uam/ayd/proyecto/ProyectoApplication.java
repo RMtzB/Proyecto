@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
+import mx.uam.ayd.proyecto.datos.PublicacionRepository;
 import mx.uam.ayd.proyecto.datos.UsuarioRepository;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
@@ -26,6 +27,8 @@ public class ProyectoApplication {
 	 */
 	@Autowired
 	UsuarioRepository usuarioRepository;
+	@Autowired
+	PublicacionRepository publicacionRepository;
 	public static void main(String[] args) {
 
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(ProyectoApplication.class);
@@ -67,5 +70,21 @@ public class ProyectoApplication {
 		b.setServicios("Nel");
 		b.setTitulo("Vente perra");
 		b.setUbicacion("En tu casa");
+		publicacionRepository.save(b);
+		
+		b= new Publicacion();
+		b.setAmueblado(true);
+		b.setAval(true);
+		b.setDeposito("5001");
+		b.setDescripcion("Mamastroso1");
+		b.setHoraEtntrada("21");
+		b.setMascotas(true);
+		b.setNumeroTelefono("T1");
+		b.setPrecio("Caro1");
+		b.setRestriccionGenero("Solo gays1");
+		b.setServicios("Nel1");
+		b.setTitulo("Vente perra1");
+		b.setUbicacion("En tu casa1");
+		publicacionRepository.save(b);
 	}
 }

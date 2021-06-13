@@ -8,8 +8,7 @@ import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 @Data
 public class PublicacionDto {
 	
-private Long idPublicacion;
-	
+	private Long idPublicacion;
 	private String titulo,precio,servicios,horaEtntrada,restriccionGenero,deposito,numeroTelefono,descripcion,ubicacion;
 	private boolean amueblado,mascotas,aval;
 	private LinkedList<String> comentarios;
