@@ -4,12 +4,13 @@ import java.util.LinkedList;
 
 import lombok.Data;
 import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
+import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 
 
 @Data
 public class AvisoidDto {
 	private Long idPublicacion;
-	private String titulo,descripcion,direccion;
+	private String titulo,direccion;
 
 	/**
 	 * Este metodo permite generar un DTO a partir de la entidad nota: es un método
@@ -20,14 +21,13 @@ public class AvisoidDto {
 	 * @return dto obtenido a partir de la entidad
 	 */
 	
-	public static AvisoDto creaDto(Aviso aviso) {
-		AvisoDto dto = new AvisoDto();
+	public static AvisoidDto creaDto(Aviso aviso) {
+		AvisoidDto dto = new AvisoidDto();
 
 		dto.setIdPublicacion(aviso.getIdPublicacion());
 		dto.setTitulo(aviso.getTitulo());
-		dto.setDescripcion(aviso.getDescripcion());
 		dto.setDireccion(aviso.getDireccion());
 		return dto;
 	}
-
+	
 }
