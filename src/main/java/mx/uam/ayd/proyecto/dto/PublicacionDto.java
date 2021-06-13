@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import lombok.Data;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
+import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
 @Data
 public class PublicacionDto {
@@ -16,6 +17,7 @@ public class PublicacionDto {
 	public static PublicacionDto creaDto(Publicacion publicacion) {
 		
 		PublicacionDto dto = new PublicacionDto();
+		dto.setIdPublicacion(publicacion.getIdPublicacion());
 		dto.setTitulo(publicacion.getTitulo());
 		dto.setPrecio(publicacion.getPrecio());
 		dto.setServicios(publicacion.getServicios());
@@ -28,7 +30,7 @@ public class PublicacionDto {
 		dto.setAmueblado(publicacion.isAmueblado());
 		dto.setMascotas(publicacion.isMascotas());
 		dto.setAval(publicacion.isAval());
-		dto.setComentarios(publicacion.prepararComentarios());
+		dto.setComentarios(publicacion.getComentarios());
 
 		return dto;
 	}
