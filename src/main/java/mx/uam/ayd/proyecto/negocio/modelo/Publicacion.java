@@ -25,7 +25,13 @@ public class Publicacion {
 					descripcion,
 					ubicacion;
 	private boolean amueblado,mascotas,aval;
-	private LinkedList<String> comentarios;
-	private LinkedList<String> urlFotos;
-
+	private LinkedList<Comentario> comentarios= new LinkedList<>();
+	
+	public String prepararComentarios(){
+		String todosComentarios="";
+		for (Comentario comentario : comentarios) {
+			todosComentarios+=comentario.getCom()+"--"+comentario.getFecha()+"finC";
+		}
+		return todosComentarios;
+	}
 }

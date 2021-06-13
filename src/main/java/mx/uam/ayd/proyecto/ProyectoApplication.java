@@ -8,6 +8,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import mx.uam.ayd.proyecto.datos.PublicacionRepository;
 import mx.uam.ayd.proyecto.datos.UsuarioRepository;
+import mx.uam.ayd.proyecto.negocio.modelo.Comentario;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
@@ -70,6 +71,10 @@ public class ProyectoApplication {
 		b.setServicios("Nel");
 		b.setTitulo("Vente perra");
 		b.setUbicacion("En tu casa");
+		b.getComentarios().add(new Comentario("comentario1", "fecha1"));
+		b.getComentarios().add(new Comentario("comentario2", "fecha2"));
+		b.getComentarios().add(new Comentario("comentario3", "fecha3"));
+		
 		publicacionRepository.save(b);
 		
 		b= new Publicacion();
@@ -85,6 +90,9 @@ public class ProyectoApplication {
 		b.setServicios("Nel1");
 		b.setTitulo("Vente perra1");
 		b.setUbicacion("En tu casa1");
+		b.getComentarios().add(new Comentario("comentario3", "fecha3"));
+		b.getComentarios().add(new Comentario("comentario4", "fecha4"));
+		b.getComentarios().add(new Comentario("comentario5", "fecha5"));
 		publicacionRepository.save(b);
 	}
 }

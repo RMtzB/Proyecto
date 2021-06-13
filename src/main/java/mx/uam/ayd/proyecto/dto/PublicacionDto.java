@@ -11,8 +11,7 @@ public class PublicacionDto {
 	private Long idPublicacion;
 	private String titulo,precio,servicios,horaEtntrada,restriccionGenero,deposito,numeroTelefono,descripcion,ubicacion;
 	private boolean amueblado,mascotas,aval;
-	private LinkedList<String> comentarios;
-	private LinkedList<String> urlFotos;
+	private String comentarios;
 
 	public static PublicacionDto creaDto(Publicacion publicacion) {
 		
@@ -29,8 +28,7 @@ public class PublicacionDto {
 		dto.setAmueblado(publicacion.isAmueblado());
 		dto.setMascotas(publicacion.isMascotas());
 		dto.setAval(publicacion.isAval());
-		dto.setComentarios(publicacion.getComentarios());
-		dto.setUrlFotos(publicacion.getUrlFotos());	
+		dto.setComentarios(publicacion.prepararComentarios());
 
 		return dto;
 	}
