@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import mx.uam.ayd.proyecto.datos.UsuarioRepository;
+import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
 /**
@@ -52,5 +53,19 @@ public class ProyectoApplication {
 		a.setContra("CCLOM1");
 		usuarioRepository.save(a);
 		System.out.println("DB Cargada");
+		
+		Publicacion b= new Publicacion();
+		b.setAmueblado(true);
+		b.setAval(true);
+		b.setDeposito("500");
+		b.setDescripcion("Mamastroso");
+		b.setHoraEtntrada("2");
+		b.setMascotas(true);
+		b.setNumeroTelefono("T");
+		b.setPrecio("Caro");
+		b.setRestriccionGenero("Solo gays");
+		b.setServicios("Nel");
+		b.setTitulo("Vente perra");
+		b.setUbicacion("En tu casa");
 	}
 }
