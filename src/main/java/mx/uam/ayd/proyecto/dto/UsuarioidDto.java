@@ -4,9 +4,10 @@ import lombok.Data;
 import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
 @Data
-public class UsuarioDto {
+public class UsuarioidDto{
 	
-	private String nombre, contra;
+	private String nombre;
+	private long id;
 	
 	/**
 	 * Este método permite generar un DTO a partir de la entidad nota: es un método
@@ -17,12 +18,10 @@ public class UsuarioDto {
 	 * @return dto obtenido a partir de la entidad
 	 */
 	
-	public static UsuarioDto creaDto(Usuario usuario) {
-		UsuarioDto dto = new UsuarioDto();
+	public static UsuarioidDto creaDto(Usuario usuario) {
+		UsuarioidDto dto = new UsuarioidDto();
+		dto.setId(usuario.getIdUsuario());
 		dto.setNombre(usuario.getNombre());
-		dto.setContra(usuario.getContra());
 		return dto;
 	}
 }
-
-
