@@ -9,7 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 import mx.uam.ayd.proyecto.datos.AvisoRepository;
 import mx.uam.ayd.proyecto.dto.AvisoDto;
 import mx.uam.ayd.proyecto.dto.AvisoidDto;
+import mx.uam.ayd.proyecto.dto.PublicacionDto;
+import mx.uam.ayd.proyecto.dto.PublicacionParcialDto;
 import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
+import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
+
 
 
 
@@ -26,17 +30,30 @@ public class ServicioAviso {
 		}
 		return avisos;
 	}
+	
+	public AvisoDto recuperaAviso(Long id) {
+		Aviso aviso = avisoRepository.findByIdPublicacion(id);
+		if (aviso == null) {
+			throw new IllegalArgumentException("El usuario no existe");
+		}
+		return AvisoDto.creaDto(aviso);
+	}
+	
 
 	public AvisoDto agregaAviso(AvisoDto nuevoAviso) {
 			Aviso aviso = avisoRepository.findByTitulo(nuevoAviso.getTitulo());
-
 			if (aviso != null) {
 				throw new IllegalArgumentException("Ese usuario ya existe");
 			}
-
+			aviso = new Aviso();
+			aviso.setIdPublicacion(nuevoAviso.getIdPublicacion());
+			aviso.setTitulo(nuevoAviso.getTitulo());
+			aviso.setDescripcion(nuevoAviso.getDescripcion());
+			aviso.setDireccion(nuevoAviso.getDireccion());
 			aviso = avisoRepository.save(aviso);
-
 			return AvisoDto.creaDto(aviso);
 }
+	
+
 	}
 	

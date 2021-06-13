@@ -17,8 +17,8 @@ public class Aviso {
 	private Long idPublicacion;
 	private String titulo,
 					descripcion,
-					direccion;
-	private LinkedList<String> comentarios;
+					direccion,
+					comentarios;
 	private LinkedList<String> urlFotos;
 
 }

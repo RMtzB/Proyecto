@@ -8,5 +8,5 @@ import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
 public interface AvisoRepository extends CrudRepository <Aviso, Long> {
 	public Aviso findByTitulo(String titulo);
-	
+	public Aviso findByIdPublicacion(Long id);
 }

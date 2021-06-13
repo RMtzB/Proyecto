@@ -29,7 +29,7 @@ public class AvisoDto {
 		dto.setTitulo(aviso.getTitulo());
 		dto.setDescripcion(aviso.getDescripcion());
 		dto.setDireccion(aviso.getDireccion());
-		//dto.setComentarios(aviso.getComentarios());
+		dto.setComentarios(aviso.getComentarios());
 		return dto;
 	}
 
