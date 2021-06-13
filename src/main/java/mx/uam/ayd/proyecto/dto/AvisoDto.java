@@ -11,7 +11,7 @@ public class AvisoDto {
 	private Long idPublicacion;
 	private String titulo,descripcion,direccion;
 	private LinkedList<String> comentarios;
-	private LinkedList<String> urlFotos;
+
 
 	/**
 	 * Este metodo permite generar un DTO a partir de la entidad nota: es un método
@@ -29,9 +29,7 @@ public class AvisoDto {
 		dto.setTitulo(aviso.getTitulo());
 		dto.setDescripcion(aviso.getDescripcion());
 		dto.setDireccion(aviso.getDireccion());
-		dto.setComentarios(aviso.getComentarios());
-		dto.setUrlFotos(aviso.getUrlFotos());
-		
+		//dto.setComentarios(aviso.getComentarios());
 		return dto;
 	}
 
