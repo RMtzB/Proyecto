@@ -29,7 +29,8 @@ public class Publicacion {
 					deposito,
 					numeroTelefono,
 					descripcion,
-					ubicacion,
+					direccion,
+					urlUbicacion,
 					comentarios;
 	private boolean amueblado,mascotas,aval;
 }

@@ -57,7 +57,8 @@ public class ServicioPublicacion {
 				publicacion.setDeposito(nuevaPublicacion.getDeposito());
 				publicacion.setNumeroTelefono(nuevaPublicacion.getNumeroTelefono());
 				publicacion.setDescripcion(nuevaPublicacion.getDescripcion());
-				publicacion.setUbicacion(nuevaPublicacion.getUbicacion());
+				publicacion.setUrlUbicacion(nuevaPublicacion.getUrlUbicacion());
+				publicacion.setDireccion(nuevaPublicacion.getDescripcion());
 				publicacion.setComentarios(nuevaPublicacion.getComentarios());
                 publicacion.setAmueblado(nuevaPublicacion.isAmueblado());
                 publicacion.setMascotas(nuevaPublicacion.isMascotas());

@@ -35,11 +35,8 @@ public class UsuarioRestController{
 	 */
 	@PostMapping(path = "/usuarios", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UsuarioidDto> create(@RequestBody UsuarioDto usuario) {
-		System.out.println("entro a get");
 		try {
-			System.out.println(usuario.getNombre()+ usuario.getContra());
 			UsuarioidDto usuarioDto = servicioUsuarios.iniciarSesion(usuario);
-			System.out.println(usuario.getNombre()+ usuario.getContra());
 			return ResponseEntity.status(HttpStatus.OK).body(usuarioDto);
 				
 		} catch (Exception ex) {

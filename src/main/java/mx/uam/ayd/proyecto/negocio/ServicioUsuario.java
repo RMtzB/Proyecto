@@ -23,7 +23,7 @@ public class ServicioUsuario {
 			throw new IllegalArgumentException("El usuario no existe");
 		}
 		
-		if(!usuario.getContra().equals(usuario.getContra())) {
+		if(!usuario.getContra().equals(usuariodto.getContra())) {
 			throw new IllegalArgumentException("Contraseña incorrecta");
 		}
 		

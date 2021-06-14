@@ -73,7 +73,8 @@ public class ProyectoApplication {
 		b.setRestriccionGenero("Solo gays");
 		b.setServicios("Nel");
 		b.setTitulo("Vente perra");
-		b.setUbicacion("En tu casa");
+		b.setUrlUbicacion("En tu casa");
+		b.setDireccion("direccioooon");
 		b.setComentarios("comentario1");
 		publicacionRepository.save(b);
 		
@@ -89,7 +90,8 @@ public class ProyectoApplication {
 		b.setRestriccionGenero("Solo gays1");
 		b.setServicios("Nel1");
 		b.setTitulo("Vente perra1");
-		b.setUbicacion("En tu casa1");
+		b.setUrlUbicacion("En tu casa1");
+		b.setDireccion("direcciooon");
 		b.setComentarios("comentario2");
 		publicacionRepository.save(b);
 	
