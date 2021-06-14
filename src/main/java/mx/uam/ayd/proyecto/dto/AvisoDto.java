@@ -1,16 +1,13 @@
 package mx.uam.ayd.proyecto.dto;
 
-import java.util.LinkedList;
-
 import lombok.Data;
 import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
 
 
 @Data
 public class AvisoDto {
-	private Long idPublicacion;
-	private String titulo,descripcion,direccion;
-	private LinkedList<String> comentarios;
+	private String titulo,descripcion,direccion,comentarios;
+
 
 
 	/**
@@ -25,11 +22,12 @@ public class AvisoDto {
 	public static AvisoDto creaDto(Aviso aviso) {
 		AvisoDto dto = new AvisoDto();
 
-		dto.setIdPublicacion(aviso.getIdPublicacion());
 		dto.setTitulo(aviso.getTitulo());
 		dto.setDescripcion(aviso.getDescripcion());
 		dto.setDireccion(aviso.getDireccion());
-		//dto.setComentarios(aviso.getComentarios());
+		dto.setComentarios(aviso.getComentarios());
+		System.out.println(aviso.getComentarios());
+		
 		return dto;
 	}
 

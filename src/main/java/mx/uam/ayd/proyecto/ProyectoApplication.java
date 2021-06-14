@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
+import mx.uam.ayd.proyecto.datos.AvisoRepository;
 import mx.uam.ayd.proyecto.datos.PublicacionRepository;
 import mx.uam.ayd.proyecto.datos.UsuarioRepository;
+import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
@@ -29,6 +31,9 @@ public class ProyectoApplication {
 	UsuarioRepository usuarioRepository;
 	@Autowired
 	PublicacionRepository publicacionRepository;
+	
+	@Autowired
+	AvisoRepository avisoRepository;
 	public static void main(String[] args) {
 
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(ProyectoApplication.class);
@@ -87,6 +92,14 @@ public class ProyectoApplication {
 		b.setUbicacion("En tu casa1");
 		b.setComentarios("comentario2");
 		publicacionRepository.save(b);
+	
+		
+		Aviso c= new Aviso();
+		c.setTitulo("Cristo es tu amigo");
+		c.setDescripcion("Cristo es malo");
+		c.setComentarios("MaravillosaJugada");
+		c.setDireccion("En tu corazon");
+		avisoRepository.save(c);
 		System.out.println("DB Cargada");
 	}
 }
