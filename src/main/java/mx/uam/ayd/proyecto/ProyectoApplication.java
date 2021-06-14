@@ -75,7 +75,7 @@ public class ProyectoApplication {
 		b.setTitulo("Vente perra");
 		b.setUrlUbicacion("En tu casa");
 		b.setDireccion("direccioooon");
-		b.setComentarios("comentario1");
+		b.setComentarios("comentario1--zsdasdasd--dddddddddd--ssssss");
 		publicacionRepository.save(b);
 		
 		b= new Publicacion();
