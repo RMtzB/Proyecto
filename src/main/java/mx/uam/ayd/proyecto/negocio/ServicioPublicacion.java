@@ -57,7 +57,8 @@ public class ServicioPublicacion {
 				publicacion.setDeposito(nuevaPublicacion.getDeposito());
 				publicacion.setNumeroTelefono(nuevaPublicacion.getNumeroTelefono());
 				publicacion.setDescripcion(nuevaPublicacion.getDescripcion());
-				publicacion.setUbicacion(nuevaPublicacion.getUbicacion());
+				publicacion.setUrlUbicacion(nuevaPublicacion.getUrlUbicacion());
+				publicacion.setDireccion(nuevaPublicacion.getDescripcion());
 				publicacion.setComentarios(nuevaPublicacion.getComentarios());
                 publicacion.setAmueblado(nuevaPublicacion.isAmueblado());
                 publicacion.setMascotas(nuevaPublicacion.isMascotas());
@@ -73,6 +74,17 @@ public class ServicioPublicacion {
 		publicacion.setComentarios(publicacion.getComentarios()+"--"+comentario);
 		publicacionRepository.save(publicacion);
 		return comentarioDto.creaDto(publicacion);
+	}
+
+	public List<PublicacionParcialDto> recuperaPublicacionesDeUsuario(Long id) {
+		List<PublicacionParcialDto> publicaciones = new ArrayList<>();
+
+		for (Publicacion publicacion : publicacionRepository.findByIdUsuario(id)) {
+			publicaciones.add(PublicacionParcialDto.creaDto(publicacion));
+		}
+
+		return publicaciones;
+
 	}
 }
 

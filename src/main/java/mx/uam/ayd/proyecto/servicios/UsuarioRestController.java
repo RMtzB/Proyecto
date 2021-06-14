@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,11 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.ResponseEntity;
 
 import lombok.extern.slf4j.Slf4j;
+import mx.uam.ayd.proyecto.dto.PublicacionDto;
+import mx.uam.ayd.proyecto.dto.PublicacionParcialDto;
 import mx.uam.ayd.proyecto.dto.UsuarioDto;
 import mx.uam.ayd.proyecto.dto.UsuarioidDto;
+import mx.uam.ayd.proyecto.negocio.ServicioPublicacion;
 import mx.uam.ayd.proyecto.negocio.ServicioUsuario;
 
 @CrossOrigin(origins = "*")
@@ -27,7 +31,9 @@ public class UsuarioRestController{
 
 	@Autowired
 	private ServicioUsuario servicioUsuarios;
-
+	
+	@Autowired
+	private ServicioPublicacion servicioPublicacion;
 	/**
 	 * Verifica si el usuario tiene permitido inciar sesión
 	 * 
@@ -35,11 +41,8 @@ public class UsuarioRestController{
 	 */
 	@PostMapping(path = "/usuarios", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UsuarioidDto> create(@RequestBody UsuarioDto usuario) {
-		System.out.println("entro a get");
 		try {
-			System.out.println(usuario.getNombre()+ usuario.getContra());
 			UsuarioidDto usuarioDto = servicioUsuarios.iniciarSesion(usuario);
-			System.out.println(usuario.getNombre()+ usuario.getContra());
 			return ResponseEntity.status(HttpStatus.OK).body(usuarioDto);
 				
 		} catch (Exception ex) {
@@ -53,5 +56,23 @@ public class UsuarioRestController{
 			throw new ResponseStatusException(status, ex.getMessage());
 		}
 
+	}
+	
+	@GetMapping(path = "/usuarios/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<PublicacionParcialDto>> retrieve(@PathVariable("id") Long id) {
+		try {
+			List<PublicacionParcialDto> publicaciones = servicioPublicacion.recuperaPublicacionesDeUsuario(id);
+			return ResponseEntity.status(HttpStatus.OK).body(publicaciones);
+		} catch (Exception ex) {
+			HttpStatus status;
+
+			if (ex instanceof IllegalArgumentException) {
+				status = HttpStatus.NOT_FOUND;
+			} else {
+				status = HttpStatus.INTERNAL_SERVER_ERROR;
+			}
+
+			throw new ResponseStatusException(status, ex.getMessage());
+		}
 	}
 }

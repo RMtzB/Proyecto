@@ -33,9 +33,9 @@ public class PublicacionRestController {
 	
 	@GetMapping(path = "/publicaciones", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<PublicacionParcialDto>> retrieveAll() {
-		List<PublicacionParcialDto> usuarios = servicioPublicacion.recuperaPublicaciones();
+		List<PublicacionParcialDto> publicaciones = servicioPublicacion.recuperaPublicaciones();
 
-		return ResponseEntity.status(HttpStatus.OK).body(usuarios);
+		return ResponseEntity.status(HttpStatus.OK).body(publicaciones);
 	}
 	
 	@GetMapping(path = "/publicaciones/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -56,7 +56,7 @@ public class PublicacionRestController {
 		}
 	}
 		
-	@PostMapping(path = "/publicacion", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/publicaciones", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<PublicacionParcialDto> create(@RequestBody PublicacionDto nuevaPublicacion) {
 		System.out.println("crearpublicacion");
 

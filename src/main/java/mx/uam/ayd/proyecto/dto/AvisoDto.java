@@ -26,8 +26,6 @@ public class AvisoDto {
 		dto.setDescripcion(aviso.getDescripcion());
 		dto.setDireccion(aviso.getDireccion());
 		dto.setComentarios(aviso.getComentarios());
-		System.out.println(aviso.getComentarios());
-		
 		return dto;
 	}
 

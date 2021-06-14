@@ -6,14 +6,15 @@ import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 @Data
 public class PublicacionDto {
 	
-	private Long idPublicacion;
-	private String titulo,precio,servicios,horaEtntrada,restriccionGenero,deposito,numeroTelefono,descripcion,ubicacion;
+	private Long idPublicacion,idUsuario;
+	private String titulo,precio,servicios,horaEtntrada,restriccionGenero,deposito,numeroTelefono,descripcion,urlUbicacion,direccion;
 	private boolean amueblado,mascotas,aval;
 	private String comentarios;
 
 	public static PublicacionDto creaDto(Publicacion publicacion) {
 		
 		PublicacionDto dto = new PublicacionDto();
+		dto.setIdUsuario(publicacion.getIdUsuario());
 		dto.setIdPublicacion(publicacion.getIdPublicacion());
 		dto.setTitulo(publicacion.getTitulo());
 		dto.setPrecio(publicacion.getPrecio());
@@ -23,10 +24,11 @@ public class PublicacionDto {
 		dto.setDeposito(publicacion.getDeposito());
 		dto.setNumeroTelefono(publicacion.getNumeroTelefono());
 		dto.setDescripcion(publicacion.getDescripcion());
-		dto.setUbicacion(publicacion.getUbicacion());
+		dto.setUrlUbicacion(publicacion.getUrlUbicacion());
 		dto.setAmueblado(publicacion.isAmueblado());
 		dto.setMascotas(publicacion.isMascotas());
 		dto.setAval(publicacion.isAval());
+		dto.setDireccion(publicacion.getDireccion());
 		dto.setComentarios(publicacion.getComentarios());
 
 		return dto;

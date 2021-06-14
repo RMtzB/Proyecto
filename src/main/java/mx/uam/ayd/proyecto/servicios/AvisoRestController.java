@@ -76,7 +76,8 @@ public class AvisoRestController {
 		}
 
 	}
-	
+
+
 	@PatchMapping(path = "/avisos/{id}/{comentario}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<comentarioDto> retrieve(@PathVariable("id") Long id,@PathVariable("comentario") String comentario) {
 		try {

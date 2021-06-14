@@ -13,6 +13,7 @@ public class comentarioDto {
 		return dto;
 	}
 	
+
 	public static comentarioDto creaDto(Aviso a) {
 		comentarioDto dto = new comentarioDto();
 		dto.setComentarios(a.getComentarios());

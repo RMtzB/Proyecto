@@ -21,6 +21,7 @@ public class Publicacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPublicacion;
+	private Long idUsuario;
 	private String titulo,
 					precio,
 					servicios,
@@ -29,7 +30,8 @@ public class Publicacion {
 					deposito,
 					numeroTelefono,
 					descripcion,
-					ubicacion,
+					direccion,
+					urlUbicacion,
 					comentarios;
 	private boolean amueblado,mascotas,aval;
 }
