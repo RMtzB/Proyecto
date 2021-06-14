@@ -52,7 +52,7 @@ public class ServicioAviso {
 			return AvisoDto.creaDto(aviso);
 }
 
-	public comentarioDto aÃ±adirComentario(Long id, String comentario) {
+	public comentarioDto añadirComentario(Long id, String comentario) {
 		Aviso aviso = avisoRepository.findByIdAviso(id);
 		aviso.setComentarios(aviso.getComentarios()+"--"+comentario);
 		avisoRepository.save(aviso);
