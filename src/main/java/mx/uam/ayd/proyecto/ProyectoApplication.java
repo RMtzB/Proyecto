@@ -74,7 +74,7 @@ public class ProyectoApplication {
 		b.setRestriccionGenero("Solo mujeres");
 		b.setServicios("Incluidos");
 		b.setTitulo("Renta de cuarto independiente");
-		b.setUbicacion("URL Google");
+		b.setUrlUbicacion("URL Google");
 		b.setComentarios("Excelente lugar y muy limpio");
 		publicacionRepository.save(b);
 		
@@ -91,13 +91,14 @@ public class ProyectoApplication {
 		b.setRestriccionGenero("Sin reestriccion");
 		b.setServicios("Todo incluido");
 		b.setTitulo("Minidepartamento para 1 persona");
-		b.setUbicacion("UR: Google");
+		b.setUrlUbicacion("UR: Google");
 		b.setComentarios("Lugar perfecto para estudiantes");
 		publicacionRepository.save(b);
 	
 		
 		b= new Publicacion();
 		b.setAmueblado(true);
+		b.setIdUsuario((long) 1);
 		b.setAval(true);
 		b.setDeposito("$7,000");
 		b.setDescripcion("Increible casa para 4 estudiantes");
@@ -108,7 +109,7 @@ public class ProyectoApplication {
 		b.setRestriccionGenero("Sin reestriccion");
 		b.setServicios("Todo incluido");
 		b.setTitulo("Casa en renta todo incluido");
-		b.setUbicacion("UR: Google");
+		b.setUrlUbicacion("UR: Google");
 		b.setComentarios("Lugar perfecto para estudiantes y parejas");
 		publicacionRepository.save(b);
 		
