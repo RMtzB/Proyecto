@@ -11,6 +11,8 @@ import mx.uam.ayd.proyecto.dto.AvisoDto;
 import mx.uam.ayd.proyecto.dto.AvisoidDto;
 import mx.uam.ayd.proyecto.dto.comentarioDto;
 import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
+import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
+
 
 @Slf4j
 @Service
@@ -27,7 +29,7 @@ public class ServicioAviso {
 	}
 	
 	public AvisoDto recuperaAviso(Long id) {
-		Aviso aviso = avisoRepository.findByIdAviso(id);
+	Aviso aviso = avisoRepository.findByIdAviso(id);
 		if (aviso == null) {
 			throw new IllegalArgumentException("El usuario no existe");
 		}
@@ -41,6 +43,7 @@ public class ServicioAviso {
 				throw new IllegalArgumentException("Ese usuario ya existe");
 			}
 			aviso = new Aviso();
+
 			aviso.setTitulo(nuevoAviso.getTitulo());
 			aviso.setDescripcion(nuevoAviso.getDescripcion());
 			aviso.setDireccion(nuevoAviso.getDireccion());
@@ -49,7 +52,7 @@ public class ServicioAviso {
 			return AvisoDto.creaDto(aviso);
 }
 
-	public comentarioDto añadirComentario(Long id, String comentario) {
+	public comentarioDto aÃ±adirComentario(Long id, String comentario) {
 		Aviso aviso = avisoRepository.findByIdAviso(id);
 		aviso.setComentarios(aviso.getComentarios()+"--"+comentario);
 		avisoRepository.save(aviso);

@@ -76,11 +76,13 @@ public class AvisoRestController {
 		}
 
 	}
-	
+
+
+}
 	@PatchMapping(path = "/avisos/{id}/{comentario}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<comentarioDto> retrieve(@PathVariable("id") Long id,@PathVariable("comentario") String comentario) {
 		try {
-			comentarioDto aux=servicioAviso.añadirComentario(id,comentario);
+			comentarioDto aux=servicioAviso.aÃ±adirComentario(id,comentario);
 			return ResponseEntity.status(HttpStatus.OK).body(aux);
 		} catch (Exception ex) {
 			HttpStatus status;
