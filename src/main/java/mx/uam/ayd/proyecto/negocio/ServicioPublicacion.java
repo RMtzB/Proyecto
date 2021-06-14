@@ -75,5 +75,16 @@ public class ServicioPublicacion {
 		publicacionRepository.save(publicacion);
 		return comentarioDto.creaDto(publicacion);
 	}
+
+	public List<PublicacionParcialDto> recuperaPublicacionesDeUsuario(Long id) {
+		List<PublicacionParcialDto> publicaciones = new ArrayList<>();
+
+		for (Publicacion publicacion : publicacionRepository.findByIdUsuario(id)) {
+			publicaciones.add(PublicacionParcialDto.creaDto(publicacion));
+		}
+
+		return publicaciones;
+
+	}
 }
 

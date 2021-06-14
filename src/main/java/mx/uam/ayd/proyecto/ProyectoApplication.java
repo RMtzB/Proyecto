@@ -62,6 +62,7 @@ public class ProyectoApplication {
 		usuarioRepository.save(a);
 			
 		Publicacion b= new Publicacion();
+		b.setIdUsuario((long) 1);
 		b.setAmueblado(true);
 		b.setAval(true);
 		b.setDeposito("500");
@@ -79,6 +80,7 @@ public class ProyectoApplication {
 		publicacionRepository.save(b);
 		
 		b= new Publicacion();
+		b.setIdUsuario((long) 2);
 		b.setAmueblado(true);
 		b.setAval(true);
 		b.setDeposito("5001");

@@ -9,7 +9,7 @@ import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 @Data
 public class PublicacionDto {
 	
-	private Long idPublicacion;
+	private Long idPublicacion,idUsuario;
 	private String titulo,precio,servicios,horaEtntrada,restriccionGenero,deposito,numeroTelefono,descripcion,urlUbicacion,direccion;
 	private boolean amueblado,mascotas,aval;
 	private String comentarios;
@@ -17,6 +17,7 @@ public class PublicacionDto {
 	public static PublicacionDto creaDto(Publicacion publicacion) {
 		
 		PublicacionDto dto = new PublicacionDto();
+		dto.setIdUsuario(publicacion.getIdUsuario());
 		dto.setIdPublicacion(publicacion.getIdPublicacion());
 		dto.setTitulo(publicacion.getTitulo());
 		dto.setPrecio(publicacion.getPrecio());
