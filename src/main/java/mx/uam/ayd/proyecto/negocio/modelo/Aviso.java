@@ -1,7 +1,5 @@
 package mx.uam.ayd.proyecto.negocio.modelo;
 
-import java.util.LinkedList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,11 +12,9 @@ import lombok.Data;
 public class Aviso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idPublicacion;
+	private Long idAviso;
 	private String titulo,
 					descripcion,
 					direccion,
 					comentarios;
-	private LinkedList<String> urlFotos;
-
 }

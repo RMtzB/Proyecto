@@ -13,6 +13,7 @@ public class PublicacionParcialDto {
 		dto.setIdPublicacion(publicacion.getIdPublicacion());
 		dto.setTitulo(publicacion.getTitulo());
 		dto.setDescripcion(publicacion.getDescripcion());
+		dto.setPrecio(publicacion.getPrecio());
 		return dto;
 	}
 }

@@ -1,11 +1,17 @@
 package mx.uam.ayd.proyecto.negocio.modelo;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -15,6 +21,7 @@ public class Publicacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPublicacion;
+	private Long idUsuario;
 	private String titulo,
 					precio,
 					servicios,
@@ -23,15 +30,8 @@ public class Publicacion {
 					deposito,
 					numeroTelefono,
 					descripcion,
-					ubicacion;
+					direccion,
+					urlUbicacion,
+					comentarios;
 	private boolean amueblado,mascotas,aval;
-	private LinkedList<Comentario> comentarios= new LinkedList<>();
-	
-	public String prepararComentarios(){
-		String todosComentarios="";
-		for (Comentario comentario : comentarios) {
-			todosComentarios+=comentario.getCom()+"--"+comentario.getFecha()+"finC";
-		}
-		return todosComentarios;
-	}
 }

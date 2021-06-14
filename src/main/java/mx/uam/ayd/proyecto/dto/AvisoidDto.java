@@ -9,7 +9,7 @@ import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 
 @Data
 public class AvisoidDto {
-	private Long idPublicacion;
+	private Long idAviso;
 	private String titulo,direccion;
 
 	/**
@@ -24,7 +24,7 @@ public class AvisoidDto {
 	public static AvisoidDto creaDto(Aviso aviso) {
 		AvisoidDto dto = new AvisoidDto();
 
-		dto.setIdPublicacion(aviso.getIdPublicacion());
+		dto.setIdAviso(aviso.getIdAviso());
 		dto.setTitulo(aviso.getTitulo());
 		dto.setDireccion(aviso.getDireccion());
 		return dto;

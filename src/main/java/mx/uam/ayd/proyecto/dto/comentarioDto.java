@@ -1,6 +1,7 @@
 package mx.uam.ayd.proyecto.dto;
 
 import lombok.Data;
+import mx.uam.ayd.proyecto.negocio.modelo.Aviso;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
 @Data
 public class comentarioDto {
@@ -12,9 +13,10 @@ public class comentarioDto {
 		return dto;
 	}
 	
-	public static comentarioDto creaDto(Aviso p) {
+
+	public static comentarioDto creaDto(Aviso a) {
 		comentarioDto dto = new comentarioDto();
-		dto.setComentarios(p.getComentarios());
+		dto.setComentarios(a.getComentarios());
 		return dto;
 	}
 
