@@ -1,10 +1,7 @@
 package mx.uam.ayd.proyecto.dto;
 
-import java.util.LinkedList;
-
 import lombok.Data;
 import mx.uam.ayd.proyecto.negocio.modelo.Publicacion;
-import mx.uam.ayd.proyecto.negocio.modelo.Usuario;
 
 @Data
 public class PublicacionDto {
