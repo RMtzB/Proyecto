@@ -64,42 +64,107 @@ public class ProyectoApplication {
 		Publicacion b= new Publicacion();
 		b.setAmueblado(true);
 		b.setAval(true);
-		b.setDeposito("500");
-		b.setDescripcion("Mamastroso");
+		b.setDeposito("1 mes");
+		b.setDescripcion("Cuarto independiente con servicios incluidos");
 		b.setHoraEtntrada("2");
 		b.setMascotas(true);
-		b.setNumeroTelefono("T");
-		b.setPrecio("Caro");
-		b.setRestriccionGenero("Solo gays");
-		b.setServicios("Nel");
-		b.setTitulo("Vente perra");
-		b.setUbicacion("En tu casa");
-		b.setComentarios("comentario1");
+		b.setNumeroTelefono("55-1234-5678");
+		b.setPrecio("$8,000");
+		b.setRestriccionGenero("Solo mujeres");
+		b.setServicios("Incluidos");
+		b.setTitulo("Renta de cuarto independiente");
+		b.setUbicacion("URL Google");
+		b.setComentarios("Excelente lugar y muy limpio");
 		publicacionRepository.save(b);
 		
 		b= new Publicacion();
 		b.setAmueblado(true);
 		b.setAval(true);
-		b.setDeposito("5001");
-		b.setDescripcion("Mamastroso1");
-		b.setHoraEtntrada("21");
+		b.setDeposito("4500");
+		b.setDescripcion("Increible depa amueblado con todos los servicios incluidos");
+		b.setHoraEtntrada("Antes de las 11 pm");
 		b.setMascotas(true);
-		b.setNumeroTelefono("T1");
-		b.setPrecio("Caro1");
-		b.setRestriccionGenero("Solo gays1");
-		b.setServicios("Nel1");
-		b.setTitulo("Vente perra1");
-		b.setUbicacion("En tu casa1");
-		b.setComentarios("comentario2");
+		b.setNumeroTelefono("55-123-123-123");
+		b.setPrecio("$6,500");
+		b.setRestriccionGenero("Sin reestriccion");
+		b.setServicios("Todo incluido");
+		b.setTitulo("Minidepartamento para 1 persona");
+		b.setUbicacion("UR: Google");
+		b.setComentarios("Lugar perfecto para estudiantes");
 		publicacionRepository.save(b);
 	
 		
+		b= new Publicacion();
+		b.setAmueblado(true);
+		b.setAval(true);
+		b.setDeposito("$7,000");
+		b.setDescripcion("Increible casa para 4 estudiantes");
+		b.setHoraEtntrada("Sin hora");
+		b.setMascotas(true);
+		b.setNumeroTelefono("55-321-321-123");
+		b.setPrecio("$7,000");
+		b.setRestriccionGenero("Sin reestriccion");
+		b.setServicios("Todo incluido");
+		b.setTitulo("Casa en renta todo incluido");
+		b.setUbicacion("UR: Google");
+		b.setComentarios("Lugar perfecto para estudiantes y parejas");
+		publicacionRepository.save(b);
+		
 		Aviso c= new Aviso();
-		c.setTitulo("Cristo es tu amigo");
-		c.setDescripcion("Cristo es malo");
+		c.setTitulo("Cuarto en renta");
 		c.setComentarios("MaravillosaJugada");
-		c.setDireccion("En tu corazon");
+		c.setDireccion("Calle Siempre Viva #123");
 		avisoRepository.save(c);
-		System.out.println("DB Cargada");
+		
+		c= new Aviso();
+		c.setTitulo("Casa en renta");
+		c.setComentarios("wooow");
+		c.setDireccion("Calle #00 ");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Renta en casa");
+		c.setComentarios("MaravillosaJugada");
+		c.setDireccion("Frente a la uami");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Se busca roomie");
+		c.setComentarios("Buena onda ");
+		c.setDireccion("Calle Atlixco 123 ");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Cuarto para compartir con pareja");
+		c.setComentarios("MaravillosaJugada");
+		c.setDireccion("Frente a la gasolineria iztapalapa");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Depto en renta");
+		c.setComentarios("wooow");
+		c.setDireccion("Calle #987 ");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Habitacion amueblada");
+		c.setComentarios("MaravillosaJugada");
+		c.setDireccion("Calle#132");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Cuarto en renta");
+		c.setComentarios("wooow");
+		c.setDireccion("Calle #777 ");
+		avisoRepository.save(c);
+		
+		c= new Aviso();
+		c.setTitulo("Habitacion en renta");
+		c.setComentarios("MaravillosaJugada");
+		c.setDireccion("Calle#999");
+		avisoRepository.save(c);
+		
+	
+
 	}
 }
